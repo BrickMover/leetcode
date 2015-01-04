@@ -7,7 +7,6 @@ public class PlusOne {
 	public static void main(String[] args) {
 		int[] digits = {9,9};
 		System.out.println(Arrays.toString(plusOne(digits)));
-		System.out.println(trailingZeros(7));
 	}
 	
 	public static int[] plusOne(int[] digits) {
@@ -46,32 +45,4 @@ public class PlusOne {
 		}
     }
 	
-	public static int trailingZeros(int n){
-		if(n<=0 || n>=17) {
-			return 0;
-		}
-		
-		
-		for (int i=n ; i > 1; i--) {
-			n = n * (i -1);
-		}
-		
-		System.out.println(n);
-		
-		if(n <= 0) {
-			return 0;
-		}
-		String s = String.valueOf(n);
-		
-		int result = 0;
-		
-		for (int i = s.length()-1; i > 0; i--) {
-			if(s.charAt(i) == '0') {
-				result ++;
-			}
-		}
-		
-		return result;
-	}
-
 }
