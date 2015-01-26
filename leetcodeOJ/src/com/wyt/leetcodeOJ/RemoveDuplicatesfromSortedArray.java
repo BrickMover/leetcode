@@ -1,6 +1,5 @@
 package com.wyt.leetcodeOJ;
 
-import java.util.Arrays;
 
 public class RemoveDuplicatesfromSortedArray {
 
