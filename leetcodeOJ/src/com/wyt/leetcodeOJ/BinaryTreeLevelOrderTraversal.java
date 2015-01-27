@@ -66,4 +66,31 @@ public class BinaryTreeLevelOrderTraversal {
 		}
         return results;
     }
+	
+	public static List<List<Integer>> levelOrderII (TreeNode root) {
+		List<List<Integer>> results = new ArrayList<List<Integer>>();
+		if (root == null) {
+			return results;
+		}
+        Queue<TreeNode> sameLevel = new ArrayDeque<TreeNode>();
+        TreeNode cur = null;
+        sameLevel.add(root);
+        while (!sameLevel.isEmpty()) {
+        	List<Integer> oneLevel = new LinkedList<Integer>();
+        	Queue<TreeNode> tmp = new LinkedList<TreeNode>();
+        	while (!sameLevel.isEmpty()) {
+				cur = sameLevel.remove();
+				oneLevel.add(cur.val);
+				if (cur.left != null) {
+					tmp.add(cur.left);
+				}
+				if (cur.right != null) {
+					tmp.add(cur.right);
+				}
+			}
+        	results.add(0, oneLevel);//尾插
+        	sameLevel = tmp;
+		}
+        return results;
+	}
 }
